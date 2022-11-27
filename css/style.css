@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    width: 50%;
+}
+
+.inline{
+    flex: 1;
+  margin: 10px;
+}
+
+.inline:first-child {
+    margin-right: 20px;
+  }
