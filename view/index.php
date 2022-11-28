@@ -25,6 +25,24 @@
 		<h1>Ecommerce Labs</h1>
 	</div>
 
+	<?php
+    if(empty($_SESSION['role'])){
+        ?>
+    <a href="login.php">Login</a>
+    <?php
+    }
+    ?>
+
+    <?php
+    session_start();
+    if(!empty($_SESSION['role'])){
+        ?>
+    <a href="logout.php">Logout</a>
+
+    <?php
+    }
+    ?>
+
 	<!-- First row -->
 	<div class="container">
 

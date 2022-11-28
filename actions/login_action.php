@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
             $_SESSION['role'] = $check['user_role'];
             $_SESSION['name'] = $check['customer_name'];
 
-            header('Location: ../view/landing_page.php');
+            header('Location: ../view/index.php');
         }else{
             echo "Login Failed. Please try again";
         }
