@@ -25,13 +25,9 @@
 		<h1>Ecommerce Labs</h1>
 	</div>
 
-	<?php
-    if(empty($_SESSION['role'])){
-        ?>
-    <a href="login.php">Login</a>
-    <?php
-    }
-    ?>
+	
+    
+    
 
     <?php
     session_start();
@@ -43,20 +39,30 @@
     }
     ?>
 
-	<!-- First row -->
+	<!-- ---------------------------First row------------------------------- -->
 	<div class="container">
 
 		<!-- <div class="row"> -->
 
 			<!-- Login or register-->
 			<div class="inline bg-light p-2 col-xs-6">
+
 				<h3>Login / Register</h3>
+
 				<a href="register.php">
 					<button type="submit" class="btn btn-primary">Register</button>
 				</a>
+
+				<?php
+    if(empty($_SESSION['role'])){
+        ?>
 				<a href="login.php">
 					<button type="submit" class="btn btn-primary">Login</button>
 				</a>
+
+				<?php
+    }
+    ?>
 			</div>
 
 			<!-- Products display -->
@@ -67,6 +73,53 @@
 				</a>
 			</div>
 
+		<!-- </div> -->
+	</div>
+
+	<br>
+
+<!-- ---------------------------Second Row--------------------------- -->
+	<div class="container">
+
+		<!-- <div class="row"> -->
+
+			<!-- Add / Edit Brand-->
+			<div class="inline bg-light p-2 col-xs-6">
+			<?php
+    if($_SESSION['role']==2){
+        ?>
+				<h3>Add / Edit Brand</h3>
+
+				<a href="../admin/add_brand.php">
+					<button type="submit" class="btn btn-danger">Add Brand</button>
+				</a>
+
+				<a href="../admin/edit_brand.php">
+					<button type="submit" class="btn btn-danger">Edit Brand</button>
+				</a>
+
+				<?php
+    }
+    ?>
+				
+</div>
+			<!-- Add Category -->
+			<div class="inline bg-light p-2 col-xs-3" >
+			<?php
+    if($_SESSION['role']==2){
+        ?>
+				<h3>Add Category</h3>
+				<a href="../admin/add_category.php">
+					<button type="submit" class="btn btn-danger">Add Category</button>
+				</a>
+
+				<a href="../admin/edit_category.php">
+					<button type="submit" class="btn btn-danger">Edit Category</button>
+				</a>
+			</div>
+			<?php
+    }
+    ?>
 		<!-- </div> -->
 	</div>
 	
